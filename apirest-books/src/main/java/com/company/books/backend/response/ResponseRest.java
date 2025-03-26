@@ -15,5 +15,11 @@ public class ResponseRest {
 		HashMap<String, String> mapa = new HashMap<String, String>();
 		
 		mapa.put("tipo", tipo);
+		mapa.put("codigo", codigo);
+		mapa.put("dato", date);
+		
+		metadata.add(mapa);
+
+		
 	}
 }
