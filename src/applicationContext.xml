@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- definir las dependencias -->
+	<bean id="afinacion" 
+		class="com.company.ejemplo1.AfinacionServices">
+	</bean>
+
+    <!-- definir beans de la aplicación -->
+    <!-- <bean id="miInstrumento"
+    		class="com.company.ejemplo1.Piano">
+    </bean> -->
+    
+    <bean id="miInstrumento"
+    		class="com.company.ejemplo1.Guitarra">
+    		<constructor-arg ref="afinacion"></constructor-arg>
+    </bean>
+    
+    <bean id="miViolin"
+    	class="com.company.ejemplo1.Violin">
+    	
+    	<property name="afinar" ref="afinacion"></property>
+    	
+    </bean>
+    
+</beans>
+
+
+
+
+
